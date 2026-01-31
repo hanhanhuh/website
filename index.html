@@ -33,6 +33,16 @@
             color: #880033;
         }
         
+        h1 .break {
+            display: none;
+        }
+        
+        @media (max-width: 600px) {
+            h1 .break {
+                display: block;
+            }
+        }
+        
         .links {
             display: flex;
             justify-content: center;
@@ -52,9 +62,9 @@
         }
         
         .links a:hover {
-            background: #880033;
+            background: #993300;
             color: #fff;
-            border-color: #880033;
+            border-color: #993300;
         }
         
         .video-grid {
@@ -142,12 +152,8 @@
 </head>
 <body>
     <header>
-        <h1>HAN HAN HUHMAN MAN</h1>
+        <h1>HAN HAN <span class="break"></span>HUHMAN MAN</h1>
         <div class="links">
-            <!-- ADD YOUR LINKS HERE -->
-            <!-- Example: <a href="https://hanhanhuh.bandcamp.com" target="_blank">♪</a> -->
-            <!-- Example: <a href="YOUR_INSTAGRAM_URL" target="_blank">📷</a> -->
-            <!-- Example: <a href="YOUR_YOUTUBE_CHANNEL" target="_blank">▶</a> -->
             <a href="https://www.instagram.com/hanhanhuh/" target="_blank">INSTAGRAM</a>
             <a href="https://hanhanhuh.bandcamp.com" target="_blank">BANDCAMP</a>
         </div>
@@ -155,13 +161,15 @@
 
     <main>
         <section class="bandcamp-section">
+            <h2>MUSIK</h2>
             <iframe style="border: 0; width: 100%; height: 240px;" 
                     src="https://bandcamp.com/EmbeddedPlayer/album=2876011149/size=large/bgcol=ffffff/linkcol=1E90FF/artwork=small/transparent=true/" 
                     seamless>
             </iframe>
         </section>
 
-        <!-- <section class="newsletter-section"> -->
+        <!-- <section class="newsletter-section">
+            <h2>NEWSLETTER</h2> -->
             <!-- ADD BREVO NEWSLETTER FORM HERE -->
             <!-- Go to: Brevo Dashboard → Marketing → Forms → Create sign-up form -->
             <!-- Copy the IFRAME or HTML embed code and paste it below -->
