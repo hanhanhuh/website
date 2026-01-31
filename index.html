@@ -51,56 +51,64 @@
       border-color: #993300;
     }
 
-    /* Top Grid: aligned with video grid (1600px max) */
-    .top-grid {
+    /* Container wrapper for consistent alignment */
+    .content-container {
       max-width: 1600px;
-      margin: 60px auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
-      align-items: stretch; /* Newsletter height will match GIF */
+      margin: 0 auto;
     }
-    .panel {
+
+    /* Bandcamp section - tighter border around content */
+    .bandcamp-section {
+      margin: 60px auto 30px;
+    }
+    .panel--bandcamp {
       border: 8px solid #1E90FF;
       background: #fff;
-    }
-    
-    /* Bandcamp spans full width, centered content */
-    .panel--bandcamp {
-      grid-column: 1 / -1;
       padding: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      width: 100%;
+      max-width: 750px;
+      margin: 0 auto;
+      display: block;
     }
     .panel--bandcamp iframe {
       width: 100%;
-      max-width: 700px;
       height: 240px;
       border: 0;
       display: block;
     }
+
+    /* Newsletter + GIF grid */
+    .bottom-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-bottom: 30px;
+      align-items: stretch;
+    }
     
-    /* Newsletter: no border, matches GIF height via grid stretch */
+    /* Newsletter: NO border (Brevo iframe has its own) */
     .panel--newsletter {
       padding: 0;
       border: none;
       background: transparent;
-      display: flex; /* Makes iframe fill available height */
+      display: flex;
       flex-direction: column;
+      min-height: 0;
     }
     .panel--newsletter iframe {
       display: block;
       width: 100%;
-      height: 100%; /* Fills container height = GIF height */
-      border: 0;
+      height: 100%;
       flex: 1;
+      min-height: 500px;
+      border: 0;
     }
     
-    /* GIF: 4:3 aspect ratio controls the row height */
+    /* GIF: 4:3 aspect ratio controls row height */
     .panel--gif {
       padding: 0;
       background: #000;
+      border: 8px solid #1E90FF;
       aspect-ratio: 4 / 3;
       overflow: hidden;
     }
@@ -111,13 +119,12 @@
       display: block;
     }
 
-    /* Videos: same 1600px container for alignment */
+    /* Videos */
     .video-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
       gap: 30px;
-      margin: 40px auto;
-      max-width: 1600px;
+      margin: 30px 0;
     }
     .video-wrapper {
       position: relative;
@@ -141,19 +148,30 @@
       text-align: center;
     }
 
-    /* Mobile: everything stacks */
-    @media (max-width: 768px) {
-      .top-grid {
+    /* Tablet breakpoint */
+    @media (max-width: 1000px) {
+      .bottom-grid {
         grid-template-columns: 1fr;
       }
-      .panel--bandcamp {
-        grid-column: auto;
-      }
       .panel--newsletter iframe {
-        height: 650px; /* Fixed height on mobile since no GIF to match */
+        height: 600px;
+        flex: none;
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .panel--newsletter iframe {
+        height: 650px;
       }
       .video-grid {
         grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .panel--bandcamp {
+        padding: 15px;
       }
     }
   </style>
@@ -167,9 +185,9 @@
     </div>
   </header>
 
-  <main>
-    <section class="top-grid">
-      <div class="panel panel--bandcamp">
+  <main class="content-container">
+    <section class="bandcamp-section">
+      <div class="panel--bandcamp">
         <iframe
           src="https://bandcamp.com/EmbeddedPlayer/album=2876011149/size=large/bgcol=ffffff/linkcol=1E90FF/artwork=small/transparent=true/"
           title="Bandcamp player"
@@ -177,8 +195,10 @@
           seamless>
         </iframe>
       </div>
+    </section>
 
-      <div class="panel panel--newsletter">
+    <section class="bottom-grid">
+      <div class="panel--newsletter">
         <iframe
           src="https://55dd9dd9.sibforms.com/serve/MUIFAFb2I02bPdqZRtYdqJksTG45_A6jajdQGG7tFreQkAmdRRzue7hoQUqTgtv1UZVHYVNWyQLPety3dDQ8oAxpaA26x6KrWo0wQ9f8YoqTuQKPYTRvPhWflY-pGmbXOJciU7vAacYRa2kL0H-2dNfrzJ9ifR3iiANrseHc3vjJeyv0dnzAV4n-grWlAF2QwTSzBKUP4Do8IVswiw=="
           title="Newsletter signup"
@@ -187,12 +207,12 @@
         </iframe>
       </div>
 
-      <div class="panel panel--gif">
+      <div class="panel--gif">
         <img src="dampfwolken.gif" alt="Animation">
       </div>
     </section>
 
-    <div class="video-grid">
+    <section class="video-grid">
       <div class="video-item">
         <div class="video-wrapper">
           <iframe
@@ -264,7 +284,7 @@
         </div>
         <div class="video-title">Penisjob</div>
       </div>
-    </div>
+    </section>
   </main>
 </body>
 </html>
