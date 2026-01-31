@@ -57,9 +57,11 @@
       margin: 0 auto;
     }
 
-    /* Bandcamp section - tighter border around content */
+    /* Bandcamp section - centered, compact border */
     .bandcamp-section {
       margin: 60px auto 30px;
+      display: flex;
+      justify-content: center;
     }
     .panel--bandcamp {
       border: 8px solid #1E90FF;
@@ -67,8 +69,6 @@
       padding: 20px;
       width: 100%;
       max-width: 750px;
-      margin: 0 auto;
-      display: block;
     }
     .panel--bandcamp iframe {
       width: 100%;
@@ -77,34 +77,31 @@
       display: block;
     }
 
-    /* Newsletter + GIF grid */
+    /* Newsletter + GIF grid - heights MUST match */
     .bottom-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 30px;
       margin-bottom: 30px;
-      align-items: stretch;
     }
     
-    /* Newsletter: NO border (Brevo iframe has its own) */
+    /* Newsletter: container must stretch to match GIF */
     .panel--newsletter {
       padding: 0;
       border: none;
       background: transparent;
-      display: flex;
-      flex-direction: column;
+      /* This is critical: no min-height, just stretch */
       min-height: 0;
+      height: 100%;
     }
     .panel--newsletter iframe {
       display: block;
       width: 100%;
-      height: 100%;
-      flex: 1;
-      min-height: 500px;
+      height: 100%; /* Fill parent */
       border: 0;
     }
     
-    /* GIF: 4:3 aspect ratio controls row height */
+    /* GIF: 4:3 ratio controls the entire row height */
     .panel--gif {
       padding: 0;
       background: #000;
@@ -119,7 +116,7 @@
       display: block;
     }
 
-    /* Videos */
+    /* Videos: 2-3 per row */
     .video-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
@@ -148,22 +145,20 @@
       text-align: center;
     }
 
-    /* Tablet breakpoint */
+    /* Tablet/Mobile: stack everything */
     @media (max-width: 1000px) {
       .bottom-grid {
         grid-template-columns: 1fr;
       }
+      .panel--newsletter {
+        height: auto;
+      }
       .panel--newsletter iframe {
-        height: 600px;
-        flex: none;
+        height: 650px; /* Fixed height when stacked */
       }
     }
 
-    /* Mobile */
     @media (max-width: 768px) {
-      .panel--newsletter iframe {
-        height: 650px;
-      }
       .video-grid {
         grid-template-columns: 1fr;
       }
