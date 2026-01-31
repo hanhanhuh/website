@@ -59,10 +59,10 @@
         
         .video-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
             gap: 30px;
             margin: 40px 0;
-            max-width: 1400px;
+            max-width: 1600px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -92,7 +92,7 @@
         }
         
         .bandcamp-section {
-            max-width: 700px;
+            max-width: 900px;
             margin: 60px auto;
             padding: 40px 20px;
             border: 8px solid #1E90FF;
@@ -104,6 +104,12 @@
             margin-bottom: 30px;
             font-size: 2rem;
             color: #1E90FF;
+        }
+        
+        .bandcamp-section iframe {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
         }
         
         .newsletter-section {
@@ -121,22 +127,13 @@
             color: #880033;
         }
         
-        .bandcamp-wrapper {
-            position: relative;
-            padding-bottom: 120px; /* Bandcamp player height */
-            height: 0;
-        }
-        
-        .bandcamp-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-        
         @media (max-width: 768px) {
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 500px) {
             .video-grid {
                 grid-template-columns: 1fr;
             }
@@ -145,26 +142,25 @@
 </head>
 <body>
     <header>
-        <h1>HAN HAN<br>HUHMAN MAN</h1>
+        <h1>HAN HAN HUHMAN MAN</h1>
         <div class="links">
             <!-- ADD YOUR LINKS HERE -->
             <!-- Example: <a href="https://hanhanhuh.bandcamp.com" target="_blank">♪</a> -->
-            <a href="https://www.instagram.com/hanhanhuh/" target="_blank">INSTAGRAM</a>
+            <!-- Example: <a href="YOUR_INSTAGRAM_URL" target="_blank">📷</a> -->
             <!-- Example: <a href="YOUR_YOUTUBE_CHANNEL" target="_blank">▶</a> -->
-            <a href="https://hanhanhuh.bandcamp.com" target="_blank">BANDCAMP</a>
+            <a href="https://hanhanhuh.bandcamp.com" target="_blank">♪ BANDCAMP</a>
         </div>
     </header>
 
     <main>
         <section class="bandcamp-section">
-            <h2>MUSIK</h2>
-            <div class="bandcamp-wrapper">
-                <iframe style="border: 0; width: 700px; height: 240px;" src="https://bandcamp.com/EmbeddedPlayer/album=2876011149/size=large/bgcol=ffffff/linkcol=f171a2/artwork=small/transparent=true/" seamless><a href="https://hanhanhuh.bandcamp.com/album/demos">Demos by Han Han Huhman Man</a></iframe>
-            </div>
+            <iframe style="border: 0; width: 100%; height: 240px;" 
+                    src="https://bandcamp.com/EmbeddedPlayer/album=2876011149/size=large/bgcol=ffffff/linkcol=1E90FF/artwork=small/transparent=true/" 
+                    seamless>
+            </iframe>
         </section>
 
-        <!-- <section class="newsletter-section">
-            <h2>NEWSLETTER</h2> -->
+        <!-- <section class="newsletter-section"> -->
             <!-- ADD BREVO NEWSLETTER FORM HERE -->
             <!-- Go to: Brevo Dashboard → Marketing → Forms → Create sign-up form -->
             <!-- Copy the IFRAME or HTML embed code and paste it below -->
