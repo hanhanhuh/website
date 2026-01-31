@@ -4,10 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>HAN HAN HUHMAN MAN</title>
-
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     body {
       background: #FFC896;
       color: #000;
@@ -15,26 +13,22 @@
       line-height: 1.4;
       padding: 20px;
     }
-
     header {
       text-align: center;
       margin-bottom: 40px;
       padding: 30px 0;
       border-bottom: 8px solid #1E90FF;
     }
-
     h1 {
       font-size: clamp(2.5rem, 8vw, 6rem);
       letter-spacing: 0.05em;
       margin-bottom: 20px;
       color: #880033;
     }
-
     h1 .break { display: none; }
     @media (max-width: 600px) {
       h1 .break { display: block; }
     }
-
     .links {
       display: flex;
       justify-content: center;
@@ -42,7 +36,6 @@
       flex-wrap: wrap;
       margin-top: 30px;
     }
-
     .links a {
       color: #000;
       text-decoration: none;
@@ -52,67 +45,61 @@
       background: #fff;
       transition: all 0.2s;
     }
-
     .links a:hover {
       background: #993300;
       color: #fff;
       border-color: #993300;
     }
 
-    /* Newsletter */
-    .newsletter-section {
-      max-width: 1600px;     /* passt optisch zu Bandcamp/Video */
-      margin: 60px auto;
-      padding: 20px;         /* weniger padding -> mehr Platz fürs iframe */
-      border: 8px solid #1E90FF;
-      background: #fff;
-    }
-
-    .newsletter-iframe {
-      display: block;
-      width: 100%;
-      height: 560px;         /* wenn abgeschnitten: 650–800px testen */
-      border: 0;
-    }
-
-    /* Bandcamp */
-    .bandcamp-section {
+    /* Top Grid: Bandcamp + Newsletter + GIF */
+    .top-grid {
       max-width: 1600px;
       margin: 60px auto;
-      padding: 0;
       display: grid;
-      grid-template-columns: 1fr auto;
+      grid-template-columns: 1fr minmax(340px, 560px);
+      grid-template-areas:
+        "bandcamp newsletter"
+        "bandcamp gif";
       gap: 30px;
-      align-items: start;
+      align-items: stretch;
     }
-
-    .bandcamp-player {
+    .panel {
       border: 8px solid #1E90FF;
       background: #fff;
+    }
+    .panel--bandcamp {
+      grid-area: bandcamp;
       padding: 20px;
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 100%;
     }
-
-    .bandcamp-player iframe {
-      display: block;
+    .panel--bandcamp iframe {
       width: 100%;
       height: 240px;
       border: 0;
+      display: block;
     }
-
-    .gif-wrapper {
-      border: 8px solid #1E90FF;
+    .panel--newsletter {
+      grid-area: newsletter;
+      padding: 0;
+      border: none;
+      background: transparent;
+    }
+    .panel--newsletter iframe {
+      display: block;
+      width: 100%;
+      height: 560px;
+      border: 0;
+    }
+    .panel--gif {
+      grid-area: gif;
+      padding: 0;
       background: #000;
-      width: calc((100vw - 40px - 30px) * 0.333 - 8px);
-      max-width: 450px;
       aspect-ratio: 4 / 3;
       overflow: hidden;
     }
-
-    .gif-wrapper img {
+    .panel--gif img {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -122,30 +109,26 @@
     /* Videos */
     .video-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 30px;
-      margin: 40px 0;
+      margin: 40px auto;
       max-width: 1600px;
-      margin-left: auto;
-      margin-right: auto;
     }
-
     .video-wrapper {
       position: relative;
-      padding-bottom: 56.25%; /* 16:9 */
+      padding-bottom: 56.25%;
       height: 0;
       border: 6px solid #1E90FF;
       background: #000;
     }
-
     .video-wrapper iframe {
       position: absolute;
-      top: 0; left: 0;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
       border: 0;
     }
-
     .video-title {
       margin-top: 10px;
       font-size: 1rem;
@@ -153,22 +136,21 @@
       text-align: center;
     }
 
-    @media (max-width: 768px) {
-      .video-grid { grid-template-columns: 1fr; }
-      .bandcamp-section { grid-template-columns: 1fr; }
-      .gif-wrapper { width: 100%; max-width: 100%; }
-
-      .newsletter-iframe {
-        height: 700px; /* auf mobile oft mehr Höhe nötig */
+    /* Mobile */
+    @media (max-width: 900px) {
+      .top-grid {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "newsletter"
+          "bandcamp"
+          "gif";
       }
-    }
-
-    @media (max-width: 500px) {
-      .video-grid { grid-template-columns: 1fr; }
+      .panel--newsletter iframe {
+        height: 700px;
+      }
     }
   </style>
 </head>
-
 <body>
   <header>
     <h1>HAN HAN <span class="break"></span>HUHMAN MAN</h1>
@@ -179,30 +161,27 @@
   </header>
 
   <main>
-    <!-- Newsletter ABOVE Bandcamp -->
-    <section class="newsletter-section" id="newsletter">
-      <iframe
-        class="newsletter-iframe"
-        src="https://55dd9dd9.sibforms.com/serve/MUIFAFb2I02bPdqZRtYdqJksTG45_A6jajdQGG7tFreQkAmdRRzue7hoQUqTgtv1UZVHYVNWyQLPety3dDQ8oAxpaA26x6KrWo0wQ9f8YoqTuQKPYTRvPhWflY-pGmbXOJciU7vAacYRa2kL0H-2dNfrzJ9ifR3iiANrseHc3vjJeyv0dnzAV4n-grWlAF2QwTSzBKUP4Do8IVswiw=="
-        title="Newsletter signup"
-        loading="lazy"
-        scrolling="no"
-        allowfullscreen>
-      </iframe>
-    </section>
-
-    <section class="bandcamp-section" id="bandcamp">
-      <div class="bandcamp-player">
+    <section class="top-grid">
+      <div class="panel panel--bandcamp">
         <iframe
           src="https://bandcamp.com/EmbeddedPlayer/album=2876011149/size=large/bgcol=ffffff/linkcol=1E90FF/artwork=small/transparent=true/"
-          seamless
           title="Bandcamp player"
-          loading="lazy">
+          loading="lazy"
+          seamless>
         </iframe>
       </div>
 
-      <div class="gif-wrapper">
-        <img src="dampfwolken.gif" alt="Animation" />
+      <div class="panel panel--newsletter">
+        <iframe
+          src="https://55dd9dd9.sibforms.com/serve/MUIFAFb2I02bPdqZRtYdqJksTG45_A6jajdQGG7tFreQkAmdRRzue7hoQUqTgtv1UZVHYVNWyQLPety3dDQ8oAxpaA26x6KrWo0wQ9f8YoqTuQKPYTRvPhWflY-pGmbXOJciU7vAacYRa2kL0H-2dNfrzJ9ifR3iiANrseHc3vjJeyv0dnzAV4n-grWlAF2QwTSzBKUP4Do8IVswiw=="
+          title="Newsletter signup"
+          loading="lazy"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <div class="panel panel--gif">
+        <img src="dampfwolken.gif" alt="Animation">
       </div>
     </section>
 
