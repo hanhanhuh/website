@@ -1,265 +1,284 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HAN HAN HUHMAN MAN</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            background: #FFC896;
-            color: #000;
-            font-family: 'Arial Black', Arial, sans-serif;
-            line-height: 1.4;
-            padding: 20px;
-        }
-        
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-            padding: 30px 0;
-            border-bottom: 8px solid #1E90FF;
-        }
-        
-        h1 {
-            font-size: clamp(2.5rem, 8vw, 6rem);
-            letter-spacing: 0.05em;
-            margin-bottom: 20px;
-            color: #880033;
-        }
-        
-        h1 .break {
-            display: none;
-        }
-        
-        @media (max-width: 600px) {
-            h1 .break {
-                display: block;
-            }
-        }
-        
-        .links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            margin-top: 30px;
-        }
-        
-        .links a {
-            color: #000;
-            text-decoration: none;
-            font-size: 2rem;
-            padding: 10px 20px;
-            border: 4px solid #1E90FF;
-            background: #fff;
-            transition: all 0.2s;
-        }
-        
-        .links a:hover {
-            background: #993300;
-            color: #fff;
-            border-color: #993300;
-        }
-        
-        .video-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-            gap: 30px;
-            margin: 40px 0;
-            max-width: 1600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 */
-            height: 0;
-            border: 6px solid #1E90FF;
-            background: #000;
-        }
-        
-        .video-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-        
-        .video-title {
-            margin-top: 10px;
-            font-size: 1rem;
-            font-weight: bold;
-            text-align: center;
-        }
-        
-        .bandcamp-section {
-            max-width: 1600px;
-            margin: 60px auto;
-            padding: 0;
-            display: grid;
-            grid-template-columns: 1fr auto;
-            gap: 30px;
-            align-items: start;
-        }
-        
-        .bandcamp-player {
-            border: 8px solid #1E90FF;
-            background: #fff;
-            padding: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
-        }
-        
-        .bandcamp-player iframe {
-            display: block;
-            max-width: 100%;
-            margin: auto;
-        }
-        
-        .gif-wrapper {
-            border: 8px solid #1E90FF;
-            background: #000;
-            width: calc((100vw - 40px - 30px) * 0.333 - 8px);
-            max-width: 450px;
-            aspect-ratio: 4 / 3;
-            overflow: hidden;
-        }
-        
-        .gif-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .newsletter-section {
-            max-width: 700px;
-            margin: 60px auto;
-            padding: 40px 20px;
-            border: 8px solid #1E90FF;
-            background: #fff;
-        }
-        
-        .newsletter-section h2 {
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 2rem;
-            color: #880033;
-        }
-        
-        @media (max-width: 768px) {
-            .video-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .bandcamp-section {
-                grid-template-columns: 1fr;
-            }
-            
-            .gif-wrapper {
-                width: 100%;
-                max-width: 100%;
-            }
-        }
-        
-        @media (max-width: 500px) {
-            .video-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HAN HAN HUHMAN MAN</title>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #FFC896;
+      color: #000;
+      font-family: "Arial Black", Arial, sans-serif;
+      line-height: 1.4;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+      padding: 30px 0;
+      border-bottom: 8px solid #1E90FF;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 8vw, 6rem);
+      letter-spacing: 0.05em;
+      margin-bottom: 20px;
+      color: #880033;
+    }
+
+    h1 .break { display: none; }
+    @media (max-width: 600px) {
+      h1 .break { display: block; }
+    }
+
+    .links {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .links a {
+      color: #000;
+      text-decoration: none;
+      font-size: 2rem;
+      padding: 10px 20px;
+      border: 4px solid #1E90FF;
+      background: #fff;
+      transition: all 0.2s;
+    }
+
+    .links a:hover {
+      background: #993300;
+      color: #fff;
+      border-color: #993300;
+    }
+
+    /* Newsletter */
+    .newsletter-section {
+      max-width: 1600px;     /* passt optisch zu Bandcamp/Video */
+      margin: 60px auto;
+      padding: 20px;         /* weniger padding -> mehr Platz fürs iframe */
+      border: 8px solid #1E90FF;
+      background: #fff;
+    }
+
+    .newsletter-iframe {
+      display: block;
+      width: 100%;
+      height: 560px;         /* wenn abgeschnitten: 650–800px testen */
+      border: 0;
+    }
+
+    /* Bandcamp */
+    .bandcamp-section {
+      max-width: 1600px;
+      margin: 60px auto;
+      padding: 0;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 30px;
+      align-items: start;
+    }
+
+    .bandcamp-player {
+      border: 8px solid #1E90FF;
+      background: #fff;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
+
+    .bandcamp-player iframe {
+      display: block;
+      width: 100%;
+      height: 240px;
+      border: 0;
+    }
+
+    .gif-wrapper {
+      border: 8px solid #1E90FF;
+      background: #000;
+      width: calc((100vw - 40px - 30px) * 0.333 - 8px);
+      max-width: 450px;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+    }
+
+    .gif-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Videos */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+      gap: 30px;
+      margin: 40px 0;
+      max-width: 1600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 */
+      height: 0;
+      border: 6px solid #1E90FF;
+      background: #000;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .video-title {
+      margin-top: 10px;
+      font-size: 1rem;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .video-grid { grid-template-columns: 1fr; }
+      .bandcamp-section { grid-template-columns: 1fr; }
+      .gif-wrapper { width: 100%; max-width: 100%; }
+
+      .newsletter-iframe {
+        height: 700px; /* auf mobile oft mehr Höhe nötig */
+      }
+    }
+
+    @media (max-width: 500px) {
+      .video-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
+
 <body>
-    <header>
-        <h1>HAN HAN <span class="break"></span>HUHMAN MAN</h1>
-        <div class="links">
-            <a href="https://www.instagram.com/hanhanhuh/" target="_blank">INSTAGRAM</a>
-            <a href="https://hanhanhuh.bandcamp.com" target="_blank">BANDCAMP</a>
+  <header>
+    <h1>HAN HAN <span class="break"></span>HUHMAN MAN</h1>
+    <div class="links">
+      <a href="https://www.instagram.com/hanhanhuh/" target="_blank" rel="noopener noreferrer">INSTAGRAM</a>
+      <a href="https://hanhanhuh.bandcamp.com/" target="_blank" rel="noopener noreferrer">BANDCAMP</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Newsletter ABOVE Bandcamp -->
+    <section class="newsletter-section" id="newsletter">
+      <iframe
+        class="newsletter-iframe"
+        src="https://55dd9dd9.sibforms.com/serve/MUIFAFb2I02bPdqZRtYdqJksTG45_A6jajdQGG7tFreQkAmdRRzue7hoQUqTgtv1UZVHYVNWyQLPety3dDQ8oAxpaA26x6KrWo0wQ9f8YoqTuQKPYTRvPhWflY-pGmbXOJciU7vAacYRa2kL0H-2dNfrzJ9ifR3iiANrseHc3vjJeyv0dnzAV4n-grWlAF2QwTSzBKUP4Do8IVswiw=="
+        title="Newsletter signup"
+        loading="lazy"
+        scrolling="no"
+        allowfullscreen>
+      </iframe>
+    </section>
+
+    <section class="bandcamp-section" id="bandcamp">
+      <div class="bandcamp-player">
+        <iframe
+          src="https://bandcamp.com/EmbeddedPlayer/album=2876011149/size=large/bgcol=ffffff/linkcol=1E90FF/artwork=small/transparent=true/"
+          seamless
+          title="Bandcamp player"
+          loading="lazy">
+        </iframe>
+      </div>
+
+      <div class="gif-wrapper">
+        <img src="dampfwolken.gif" alt="Animation" />
+      </div>
+    </section>
+
+    <div class="video-grid">
+      <div class="video-item">
+        <div class="video-wrapper">
+          <iframe
+            src="https://www.youtube.com/embed/pfd4g8LXhFc"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            title="Anti-Shock">
+          </iframe>
         </div>
-    </header>
+        <div class="video-title">Anti-Shock</div>
+      </div>
 
-    <main>
-        <section class="bandcamp-section">
-            <div class="bandcamp-player">
-                <iframe style="border: 0; width: 100%; height: 240px;" 
-                        src="https://bandcamp.com/EmbeddedPlayer/album=2876011149/size=large/bgcol=ffffff/linkcol=1E90FF/artwork=small/transparent=true/" 
-                        seamless>
-                </iframe>
-            </div>
-            <div class="gif-wrapper">
-                <img src="dampfwolken.gif" alt="Animation">
-            </div>
-        </section>
-
-        <section class="newsletter-section">
-            <iframe width="540" height="305" src="https://55dd9dd9.sibforms.com/serve/MUIFAFb2I02bPdqZRtYdqJksTG45_A6jajdQGG7tFreQkAmdRRzue7hoQUqTgtv1UZVHYVNWyQLPety3dDQ8oAxpaA26x6KrWo0wQ9f8YoqTuQKPYTRvPhWflY-pGmbXOJciU7vAacYRa2kL0H-2dNfrzJ9ifR3iiANrseHc3vjJeyv0dnzAV4n-grWlAF2QwTSzBKUP4Do8IVswiw==" frameborder="0" scrolling="auto" allowfullscreen style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;"></iframe>
-        </section>
-
-
-        <div class="video-grid">
-            <div class="video-item">
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/pfd4g8LXhFc" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen></iframe>
-                </div>
-                <div class="video-title">Anti-Shock</div>
-            </div>
-
-            <div class="video-item">
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/ve5CYPHkW0I" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen></iframe>
-                </div>
-                <div class="video-title">Motivationshymne</div>
-            </div>
-
-            <div class="video-item">
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/5QtzXUHr81k" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen></iframe>
-                </div>
-                <div class="video-title">Kapitel 3</div>
-            </div>
-
-            <div class="video-item">
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/b3d0NmavVOQ" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen></iframe>
-                </div>
-                <div class="video-title">600 Kreuze</div>
-            </div>
-
-            <div class="video-item">
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/JeYLyGZ2arg" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen></iframe>
-                </div>
-                <div class="video-title">Sonntag und Gestern</div>
-
-            <div class="video-item">
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/SBUzPgdd45w" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen></iframe>
-                </div>
-                <div class="video-title">Penisjob</div>
-            </div>
+      <div class="video-item">
+        <div class="video-wrapper">
+          <iframe
+            src="https://www.youtube.com/embed/ve5CYPHkW0I"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            title="Motivationshymne">
+          </iframe>
         </div>
-    </main>
+        <div class="video-title">Motivationshymne</div>
+      </div>
+
+      <div class="video-item">
+        <div class="video-wrapper">
+          <iframe
+            src="https://www.youtube.com/embed/5QtzXUHr81k"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            title="Kapitel 3">
+          </iframe>
+        </div>
+        <div class="video-title">Kapitel 3</div>
+      </div>
+
+      <div class="video-item">
+        <div class="video-wrapper">
+          <iframe
+            src="https://www.youtube.com/embed/b3d0NmavVOQ"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            title="600 Kreuze">
+          </iframe>
+        </div>
+        <div class="video-title">600 Kreuze</div>
+      </div>
+
+      <div class="video-item">
+        <div class="video-wrapper">
+          <iframe
+            src="https://www.youtube.com/embed/JeYLyGZ2arg"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            title="Sonntag und Gestern">
+          </iframe>
+        </div>
+        <div class="video-title">Sonntag und Gestern</div>
+      </div>
+
+      <div class="video-item">
+        <div class="video-wrapper">
+          <iframe
+            src="https://www.youtube.com/embed/SBUzPgdd45w"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            title="Penisjob">
+          </iframe>
+        </div>
+        <div class="video-title">Penisjob</div>
+      </div>
+    </div>
+  </main>
 </body>
 </html>
