@@ -4,237 +4,147 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>HAN HAN HUHMAN MAN</title>
-  
-  <!-- Brevo styles -->
+
+  <!-- Brevo styles (include once) -->
   <style>
-    @font-face {
-      font-display: block;
-      font-family: Roboto;
-      src: url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/7529907e9eaf8ebb5220c5f9850e3811.woff2) format("woff2"), url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/25c678feafdc175a70922a116c9be3e7.woff) format("woff")
+    @font-face { font-display:block; font-family:Roboto;
+      src:url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/7529907e9eaf8ebb5220c5f9850e3811.woff2) format("woff2"),
+          url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/25c678feafdc175a70922a116c9be3e7.woff) format("woff");
     }
-    @font-face {
-      font-display: fallback;
-      font-family: Roboto;
-      font-weight: 600;
-      src: url(https://assets.brevo.com/font/Roboto/Latin/medium/normal/6e9caeeafb1f3491be3e32744bc30440.woff2) format("woff2"), url(https://assets.brevo.com/font/Roboto/Latin/medium/normal/71501f0d8d5aa95960f6475d5487d4c2.woff) format("woff")
+    @font-face { font-display:fallback; font-family:Roboto; font-weight:600;
+      src:url(https://assets.brevo.com/font/Roboto/Latin/medium/normal/6e9caeeafb1f3491be3e32744bc30440.woff2) format("woff2"),
+          url(https://assets.brevo.com/font/Roboto/Latin/medium/normal/71501f0d8d5aa95960f6475d5487d4c2.woff) format("woff");
     }
-    @font-face {
-      font-display: fallback;
-      font-family: Roboto;
-      font-weight: 700;
-      src: url(https://assets.brevo.com/font/Roboto/Latin/bold/normal/3ef7cf158f310cf752d5ad08cd0e7e60.woff2) format("woff2"), url(https://assets.brevo.com/font/Roboto/Latin/bold/normal/ece3a1d82f18b60bcce0211725c476aa.woff) format("woff")
+    @font-face { font-display:fallback; font-family:Roboto; font-weight:700;
+      src:url(https://assets.brevo.com/font/Roboto/Latin/bold/normal/3ef7cf158f310cf752d5ad08cd0e7e60.woff2) format("woff2"),
+          url(https://assets.brevo.com/font/Roboto/Latin/bold/normal/ece3a1d82f18b60bcce0211725c476aa.woff) format("woff");
     }
-    #sib-container input:-ms-input-placeholder {
-      text-align: left;
-      font-family: Helvetica, sans-serif;
-      color: #c0ccda;
-    }
-    #sib-container input::placeholder {
-      text-align: left;
-      font-family: Helvetica, sans-serif;
-      color: #c0ccda;
-    }
-    #sib-container textarea::placeholder {
-      text-align: left;
-      font-family: Helvetica, sans-serif;
-      color: #c0ccda;
-    }
-    #sib-container a {
-      text-decoration: underline;
-      color: #2BB2FC;
-    }
+    #sib-container input:-ms-input-placeholder { text-align:left; font-family:Helvetica, sans-serif; color:#c0ccda; }
+    #sib-container input::placeholder { text-align:left; font-family:Helvetica, sans-serif; color:#c0ccda; }
+    #sib-container textarea::placeholder { text-align:left; font-family:Helvetica, sans-serif; color:#c0ccda; }
+    #sib-container a { text-decoration:underline; color:#2BB2FC; }
   </style>
-  <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
-  
+  <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css" />
+
   <!-- Main styles -->
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      background: #FFC896;
-      color: #000;
-      font-family: "Arial Black", Arial, sans-serif;
-      line-height: 1.4;
-      padding: 20px;
-    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { background:#FFC896; color:#000; font-family:"Arial Black", Arial, sans-serif; line-height:1.4; padding:20px; }
 
-    /* Header with title+links on left, newsletter on right */
-    header {
-      max-width: 1600px;
-      margin: 0 auto 40px;
-      padding: 30px 0;
-      border-bottom: 8px solid #1E90FF;
-      display: grid;
-      grid-template-columns: 1fr 380px;  /* Fixed right column = newsletter width */
-      gap: 40px;
-      align-items: center;
+    header{
+      max-width:1600px; margin:0 auto 40px; padding:30px 0;
+      border-bottom:8px solid #1E90FF;
+      display:grid; grid-template-columns:1fr 380px; gap:40px; align-items:center;
     }
-    .header-left {
-      text-align: center;
-    }
-    h1 {
-      font-size: clamp(2.5rem, 8vw, 6rem);
-      letter-spacing: 0.05em;
-      margin-bottom: 20px;
-      color: #880033;
-    }
-    h1 .break { display: none; }
-    .links {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      flex-wrap: wrap;
-      margin-top: 30px;
-    }
-    .links a {
-      color: #000;
-      text-decoration: none;
-      font-size: 2rem;
-      padding: 10px 20px;
-      border: 4px solid #1E90FF;
-      background: #fff;
-      transition: all 0.2s;
-    }
-    .links a:hover {
-      background: #880033;
-      color: #fff;
-      border-color: #880033;
-    }
+    .header-left{ text-align:center; }
+    h1{ font-size:clamp(2.5rem, 8vw, 6rem); letter-spacing:0.05em; margin-bottom:20px; color:#880033; }
+    h1 .break{ display:none; }
 
-    /* Newsletter in header - smaller, less prominent */
-    .header-newsletter {
-      width: 380px;  /* was 320px */
-      padding: 0;
+    .links{ display:flex; justify-content:center; gap:30px; flex-wrap:wrap; margin-top:30px; }
+    .links a{
+      color:#000; text-decoration:none; font-size:2rem; padding:10px 20px;
+      border:4px solid #1E90FF; background:#fff; transition:all 0.2s;
     }
-    .header-newsletter #sib-container {
-      max-width: 100% !important;
-      font-size: 15px;  /* was 14px */
-    }
-    .header-newsletter .sib-form-block p {
-      font-size: 24px !important;  /* was 20px */
-    }
-    .header-newsletter .sib-text-form-block p {
-      font-size: 14px !important;  /* was 13px */
-    }
-    .header-newsletter label {
-      font-size: 14px !important;  /* was 13px */
-    }
-    .header-newsletter input {
-      font-size: 15px !important;  /* was 14px */
-    }
-    .header-newsletter button {
-      font-size: 15px !important;  /* was 14px */
-      padding: 12px 24px !important;  /* was 10px 20px */
-    }
+    .links a:hover{ background:#880033; color:#fff; border-color:#880033; }
 
-    /* Main container */
-    main {
-      max-width: 1600px;
-      margin: 0 auto;
+    .header-newsletter{ width:380px; padding:0; }
+    .lang-toggle{ display:flex; gap:10px; justify-content:flex-end; margin-bottom:10px; }
+    .lang-toggle a{
+      display:inline-block; font-family:Arial, sans-serif; font-weight:700; letter-spacing:0.02em;
+      text-decoration:none; padding:6px 10px; border:3px solid #1E90FF; background:#fff; color:#000;
     }
+    .lang-toggle a[aria-current="true"]{ background:#880033; border-color:#880033; color:#fff; }
 
-    /* Bandcamp + GIF grid - SAME HEIGHT */
-    .bandcamp-section {
-      margin: 60px 0 40px;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 30px;
-      align-items: stretch; /* Critical: both stretch to same height */
-    }
-    .bandcamp-player {
-      border: 8px solid #1E90FF;
-      background: #fff;
-      padding: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 0; /* Allow flex to control height */
-    }
-    .bandcamp-player iframe {
-      width: 100%;
-      max-width: 700px;
-      height: 240px;
-      border: 0;
-      display: block;
-    }
-    .gif-wrapper {
-      border: 8px solid #1E90FF;
-      background: #000;
-      width: 380px;  /* Match newsletter width exactly */
-      aspect-ratio: 4 / 3;
-      overflow: hidden;
-    }
-    .gif-wrapper img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
+    .header-newsletter #sib-container{ max-width:100% !important; font-size:15px; }
+    .header-newsletter .sib-form-block p{ font-size:24px !important; }
+    .header-newsletter .sib-text-form-block p{ font-size:14px !important; }
+    .header-newsletter label{ font-size:14px !important; }
+    .header-newsletter input{ font-size:15px !important; }
+    .header-newsletter button{ font-size:15px !important; padding:12px 24px !important; }
 
-    /* Videos: 2-3 per row */
-    .video-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-      gap: 30px;
-      margin: 40px 0;
-    }
-    .video-wrapper {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      border: 6px solid #1E90FF;
-      background: #000;
-    }
-    .video-wrapper iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-    .video-title {
-      margin-top: 10px;
-      font-size: 1rem;
-      font-weight: bold;
-      text-align: center;
-    }
+    main{ max-width:1600px; margin:0 auto; }
 
-    /* Tablet: newsletter moves below title */
-    @media (max-width: 1100px) {
-      header {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-      .header-newsletter {
-        width: 100%;
-        max-width: 400px;
-        margin: 30px auto 0;
-      }
+    .bandcamp-section{
+      margin:60px 0 40px;
+      display:grid; grid-template-columns:1fr auto; gap:30px; align-items:stretch;
     }
-
-    /* Mobile */
-    @media (max-width: 768px) {
-      h1 .break { display: block; }
-      .bandcamp-section {
-        grid-template-columns: 1fr;
-      }
-      .gif-wrapper {
-        width: 100%;
-        max-width: 100%;
-      }
-      .video-grid {
-        grid-template-columns: 1fr;
-      }
+    .bandcamp-player{
+      border:8px solid #1E90FF; background:#fff; padding:20px;
+      display:flex; align-items:center; justify-content:center; min-height:0;
     }
+    .bandcamp-player iframe{ width:100%; max-width:700px; height:240px; border:0; display:block; }
 
-    @media (max-width: 600px) {
-      .links a {
-        font-size: 1.5rem;
-        padding: 8px 16px;
-      }
+    .gif-wrapper{
+      border:8px solid #1E90FF; background:#000;
+      width:380px; aspect-ratio:4 / 3; overflow:hidden;
+    }
+    .gif-wrapper a{ display:block; width:100%; height:100%; }
+    .gif-wrapper img{ width:100%; height:100%; object-fit:cover; display:block; }
+
+    .video-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(450px, 1fr)); gap:30px; margin:40px 0; }
+    .video-wrapper{ position:relative; padding-bottom:56.25%; height:0; border:6px solid #1E90FF; background:#000; }
+    .video-wrapper iframe{ position:absolute; top:0; left:0; width:100%; height:100%; border:0; }
+    .video-title{ margin-top:10px; font-size:1rem; font-weight:bold; text-align:center; }
+
+    @media (max-width:1100px){
+      header{ grid-template-columns:1fr; text-align:center; }
+      .header-newsletter{ width:100%; max-width:420px; margin:30px auto 0; }
+      .lang-toggle{ justify-content:center; }
+    }
+    @media (max-width:768px){
+      h1 .break{ display:block; }
+      .bandcamp-section{ grid-template-columns:1fr; }
+      .gif-wrapper{ width:100%; max-width:100%; }
+      .video-grid{ grid-template-columns:1fr; }
+    }
+    @media (max-width:600px){
+      .links a{ font-size:1.5rem; padding:8px 16px; }
     }
   </style>
+
+  <!-- Language + Brevo messages (must be defined before Brevo main.js runs) -->
+  <script>
+    (function () {
+      const params = new URLSearchParams(location.search);
+      const q = (params.get("lang") || "").toLowerCase();
+      const nav = (navigator.language || "en").toLowerCase().startsWith("de") ? "de" : "en";
+      const lang = (q === "de" || q === "en") ? q : nav;
+
+      window.__LANG = lang;
+      document.documentElement.lang = lang;
+
+      window.REQUIRED_CODE_ERROR_MESSAGE = (lang === "de")
+        ? "Bitte wählen Sie eine Landesvorwahl."
+        : "Please choose a country code";
+
+      window.LOCALE = lang;
+
+      window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = (lang === "de")
+        ? "Die eingegebenen Informationen sind ungültig. Bitte prüfe das Format und versuche es erneut."
+        : "The information provided is invalid. Please review the field format and try again.";
+
+      window.REQUIRED_ERROR_MESSAGE = (lang === "de")
+        ? "Dieses Feld darf nicht leer sein."
+        : "This field cannot be left blank.";
+
+      window.GENERIC_INVALID_MESSAGE = (lang === "de")
+        ? "Die eingegebenen Informationen sind ungültig. Bitte prüfe das Format und versuche es erneut."
+        : "The information provided is invalid. Please review the field format and try again.";
+
+      window.translation = {
+        common: {
+          selectedList: (lang === "de") ? "{quantity} Liste ausgewählt" : "{quantity} list selected",
+          selectedLists: (lang === "de") ? "{quantity} Listen ausgewählt" : "{quantity} lists selected",
+          selectedOption: (lang === "de") ? "{quantity} ausgewählt" : "{quantity} selected",
+          selectedOptions: (lang === "de") ? "{quantity} ausgewählt" : "{quantity} selected",
+        }
+      };
+
+      window.AUTOHIDE = Boolean(0);
+    })();
+  </script>
 </head>
+
 <body>
   <header>
     <div class="header-left">
@@ -244,84 +154,112 @@
         <a href="https://hanhanhuh.bandcamp.com/" target="_blank" rel="noopener noreferrer">BANDCAMP</a>
       </div>
     </div>
-    
+
     <div class="header-newsletter">
-      <!-- Brevo Form -->
-      <div class="sib-form" style="text-align: center; background-color: #ffc896;">
+      <nav class="lang-toggle" aria-label="Language">
+        <a id="lang-de" href="#">DE</a>
+        <a id="lang-en" href="#">EN</a>
+      </nav>
+
+      <!-- Brevo Form (single instance, no CAPTCHA) -->
+      <div class="sib-form" style="text-align:center; background-color:#ffc896;">
         <div id="sib-form-container" class="sib-form-container">
-          <div id="error-message" class="sib-form-message-panel" style="font-size:16px; text-align:left; font-family:Helvetica, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;max-width:540px;">
+
+          <div id="error-message" class="sib-form-message-panel"
+               style="font-size:16px; text-align:left; font-family:Helvetica, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949; max-width:540px;">
             <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
-              <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon">
+              <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon" aria-hidden="true">
                 <path d="M256 40c118.621 0 216 96.075 216 216 0 119.291-96.61 216-216 216-119.244 0-216-96.562-216-216 0-119.203 96.602-216 216-216m0-32C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm-11.49 120h22.979c6.823 0 12.274 5.682 11.99 12.5l-7 168c-.268 6.428-5.556 11.5-11.99 11.5h-8.979c-6.433 0-11.722-5.073-11.99-11.5l-7-168c-.283-6.818 5.167-12.5 11.99-12.5zM256 340c-15.464 0-28 12.536-28 28s12.536 28 28 28 28-12.536 28-28-12.536-28-28-28z" />
               </svg>
-              <span class="sib-form-message-panel__inner-text">
+              <span class="sib-form-message-panel__inner-text" data-i18n="brevo_error_save">
                 Your subscription could not be saved. Please try again.
               </span>
             </div>
           </div>
-          <div></div>
-          <div id="success-message" class="sib-form-message-panel" style="font-size:16px; text-align:left; font-family:Helvetica, sans-serif; color:#085229; background-color:#e7faf0; border-radius:3px; border-color:#13ce66;max-width:540px;">
+
+          <div id="success-message" class="sib-form-message-panel"
+               style="font-size:16px; text-align:left; font-family:Helvetica, sans-serif; color:#085229; background-color:#e7faf0; border-radius:3px; border-color:#13ce66; max-width:540px;">
             <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
-              <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon">
+              <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon" aria-hidden="true">
                 <path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z" />
               </svg>
-              <span class="sib-form-message-panel__inner-text">
-                Your subscription has been successful.
+              <span class="sib-form-message-panel__inner-text" data-i18n="brevo_success_doi">
+                Thanks! Please check your email and click the confirmation link to complete your subscription.
               </span>
             </div>
           </div>
-          <div></div>
-          <div id="sib-container" class="sib-container--large sib-container--vertical" style="text-align:center; background-color:rgba(255,255,255,1); max-width:540px; border-radius:3px; border-width:8px; border-color:#1e90ff; border-style:solid; direction:ltr">
-            <form id="sib-form" method="POST" action="https://55dd9dd9.sibforms.com/serve/MUIFAFb2I02bPdqZRtYdqJksTG45_A6jajdQGG7tFreQkAmdRRzue7hoQUqTgtv1UZVHYVNWyQLPety3dDQ8oAxpaA26x6KrWo0wQ9f8YoqTuQKPYTRvPhWflY-pGmbXOJciU7vAacYRa2kL0H-2dNfrzJ9ifR3iiANrseHc3vjJeyv0dnzAV4n-grWlAF2QwTSzBKUP4Do8IVswiw==" data-type="subscription">
-              <div style="padding: 8px 0;">
-                <div class="sib-form-block" style="font-size:32px; text-align:left; font-weight:700; font-family:Helvetica, sans-serif; color:#3C4858; background-color:transparent; text-align:left">
-                  <p>✳ Newsletter ✳</p>
+
+          <div id="sib-container" class="sib-container--large sib-container--vertical"
+               style="text-align:center; background-color:rgba(255,255,255,1); max-width:540px; border-radius:3px; border-width:8px; border-color:#1e90ff; border-style:solid; direction:ltr">
+            <form id="sib-form" method="POST"
+              action="https://55dd9dd9.sibforms.com/serve/MUIFAFb2I02bPdqZRtYdqJksTG45_A6jajdQGG7tFreQkAmdRRzue7hoQUqTgtv1UZVHYVNWyQLPety3dDQ8oAxpaA26x6KrWo0wQ9f8YoqTuQKPYTRvPhWflY-pGmbXOJciU7vAacYRa2kL0H-2dNfrzJ9ifR3iiANrseHc3vjJeyv0dnzAV4n-grWlAF2QwTSzBKUP4Do8IVswiw=="
+              data-type="subscription">
+
+              <div style="padding:8px 0;">
+                <div class="sib-form-block"
+                  style="font-size:32px; text-align:left; font-weight:700; font-family:Helvetica, sans-serif; color:#3C4858; background-color:transparent;">
+                  <p data-i18n="newsletter_title">✳ Newsletter ✳</p>
                 </div>
               </div>
-              <div style="padding: 8px 0;">
-                <div class="sib-form-block" style="font-size:16px; text-align:left; font-family:Helvetica, sans-serif; color:#3C4858; background-color:transparent; text-align:left">
+
+              <div style="padding:8px 0;">
+                <div class="sib-form-block"
+                  style="font-size:16px; text-align:left; font-family:Helvetica, sans-serif; color:#3C4858; background-color:transparent;">
                   <div class="sib-text-form-block">
-                    <p>Han Han Huhman Man</p>
-                    <p>releases, demos, videos, occasional spam</p>
+                    <p data-i18n="newsletter_line1">Han Han Huhman Man</p>
+                    <p data-i18n="newsletter_line2">releases, demos, videos, occasional spam</p>
                   </div>
                 </div>
               </div>
-              <div style="padding: 8px 0;">
+
+              <div style="padding:8px 0;">
                 <div class="sib-input sib-form-block">
                   <div class="form__entry entry_block">
-                    <div class="form__label-row ">
-                      <label class="entry__label" style="font-weight: 700; text-align:left; font-size:16px; text-align:left; font-weight:700; font-family:Helvetica, sans-serif; color:#3c4858;" for="EMAIL" data-required="*">Enter your email address to subscribe</label>
+                    <div class="form__label-row">
+                      <label class="entry__label"
+                        style="font-weight:700; text-align:left; font-size:16px; font-family:Helvetica, sans-serif; color:#3c4858;"
+                        for="EMAIL" data-required="*" data-i18n="email_label">
+                        Enter your email address to subscribe
+                      </label>
+
                       <div class="entry__field">
-                        <input class="input " type="text" id="EMAIL" name="EMAIL" autocomplete="off" placeholder="EMAIL" data-required="true" required />
+                        <input class="input" type="text" id="EMAIL" name="EMAIL" autocomplete="off"
+                               placeholder="EMAIL" data-required="true" required />
                       </div>
                     </div>
-                    <label class="entry__error entry__error--primary" style="font-size:16px; text-align:left; font-family:Helvetica, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;">
+
+                    <label class="entry__error entry__error--primary"
+                      style="font-size:16px; text-align:left; font-family:Helvetica, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;">
                     </label>
-                    <label class="entry__specification" style="font-size:12px; text-align:left; font-family:Helvetica, sans-serif; color:#8390A4; text-align:left">
-                      Provide your email address to subscribe. For e.g abc@xyz.com
+
+                    <label class="entry__specification"
+                      style="font-size:12px; text-align:left; font-family:Helvetica, sans-serif; color:#8390A4;">
+                      <span data-i18n="email_help">For example: abc@xyz.com</span>
                     </label>
                   </div>
                 </div>
               </div>
-              <div style="padding: 8px 0;">
-                <div class="g-recaptcha-v3" data-sitekey="6LdlnFwsAAAAABcOEWGjygLvsJZwaHKDAKmBAlqn" style="display: none"></div>
-              </div>
-              <div style="padding: 8px 0;">
-                <div class="sib-form-block" style="text-align: left">
-                  <button class="sib-form-block__button sib-form-block__button-with-loader" style="font-size:16px; text-align:left; font-weight:700; font-family:Helvetica, sans-serif; color:#FFFFFF; background-color:#3E4857; border-radius:11px; border-width:0px;" form="sib-form" type="submit">
-                    <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512" style="">
+
+              <div style="padding:8px 0;">
+                <div class="sib-form-block" style="text-align:left">
+                  <button class="sib-form-block__button sib-form-block__button-with-loader"
+                    style="font-size:16px; text-align:left; font-weight:700; font-family:Helvetica, sans-serif; color:#FFFFFF; background-color:#3E4857; border-radius:11px; border-width:0px;"
+                    form="sib-form" type="submit">
+                    <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512" aria-hidden="true">
                       <path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z" />
                     </svg>
-                    SUBSCRIBE
+                    <span data-i18n="button_subscribe">SUBSCRIBE</span>
                   </button>
                 </div>
               </div>
-              <input type="text" name="email_address_check" value="" class="input--hidden">
-              <input type="hidden" name="locale" value="en">
+
+              <input type="text" name="email_address_check" value="" class="input--hidden" />
+              <input id="sib-locale" type="hidden" name="locale" value="en" />
             </form>
           </div>
         </div>
       </div>
+      <!-- End Brevo Form -->
     </div>
   </header>
 
@@ -335,104 +273,129 @@
           seamless>
         </iframe>
       </div>
+
       <div class="gif-wrapper">
-        <img src="dampfwolken.gif" alt="Animation">
+        <a href="https://phospheneparties.bandcamp.com/" target="_blank" rel="noopener noreferrer">
+          <img src="dampfwolken.gif" alt="Animation">
+        </a>
       </div>
     </section>
 
     <section class="video-grid">
       <div class="video-item">
         <div class="video-wrapper">
-          <iframe
-            src="https://www.youtube.com/embed/pfd4g8LXhFc"
+          <iframe src="https://www.youtube.com/embed/pfd4g8LXhFc"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-            title="Anti-Shock">
-          </iframe>
+            allowfullscreen title="Anti-Shock"></iframe>
         </div>
         <div class="video-title">Anti-Shock</div>
       </div>
 
       <div class="video-item">
         <div class="video-wrapper">
-          <iframe
-            src="https://www.youtube.com/embed/ve5CYPHkW0I"
+          <iframe src="https://www.youtube.com/embed/ve5CYPHkW0I"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-            title="Motivationshymne">
-          </iframe>
+            allowfullscreen title="Motivationshymne"></iframe>
         </div>
         <div class="video-title">Motivationshymne</div>
       </div>
 
       <div class="video-item">
         <div class="video-wrapper">
-          <iframe
-            src="https://www.youtube.com/embed/5QtzXUHr81k"
+          <iframe src="https://www.youtube.com/embed/5QtzXUHr81k"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-            title="Kapitel 3">
-          </iframe>
+            allowfullscreen title="Kapitel 3"></iframe>
         </div>
         <div class="video-title">Kapitel 3</div>
       </div>
 
       <div class="video-item">
         <div class="video-wrapper">
-          <iframe
-            src="https://www.youtube.com/embed/b3d0NmavVOQ"
+          <iframe src="https://www.youtube.com/embed/b3d0NmavVOQ"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-            title="600 Kreuze">
-          </iframe>
+            allowfullscreen title="600 Kreuze"></iframe>
         </div>
         <div class="video-title">600 Kreuze</div>
       </div>
 
       <div class="video-item">
         <div class="video-wrapper">
-          <iframe
-            src="https://www.youtube.com/embed/JeYLyGZ2arg"
+          <iframe src="https://www.youtube.com/embed/JeYLyGZ2arg"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-            title="Sonntag und Gestern">
-          </iframe>
+            allowfullscreen title="Sonntag und Gestern"></iframe>
         </div>
         <div class="video-title">Sonntag und Gestern</div>
       </div>
 
       <div class="video-item">
         <div class="video-wrapper">
-          <iframe
-            src="https://www.youtube.com/embed/SBUzPgdd45w"
+          <iframe src="https://www.youtube.com/embed/SBUzPgdd45w"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-            title="Penisjob">
-          </iframe>
+            allowfullscreen title="Penisjob"></iframe>
         </div>
         <div class="video-title">Penisjob</div>
       </div>
     </section>
   </main>
 
-  <!-- Brevo scripts -->
+  <!-- i18n + lang switch (runs before Brevo main.js because main.js is defer) -->
   <script>
-    window.REQUIRED_CODE_ERROR_MESSAGE = 'Please choose a country code';
-    window.LOCALE = 'en';
-    window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "The information provided is invalid. Please review the field format and try again.";
-    window.REQUIRED_ERROR_MESSAGE = "This field cannot be left blank. ";
-    window.GENERIC_INVALID_MESSAGE = "The information provided is invalid. Please review the field format and try again.";
-    window.translation = {
-      common: {
-        selectedList: '{quantity} list selected',
-        selectedLists: '{quantity} lists selected',
-        selectedOption: '{quantity} selected',
-        selectedOptions: '{quantity} selected',
+    (function () {
+      const lang = window.__LANG || "en";
+      const dict = {
+        en: {
+          brevo_error_save: "Your subscription could not be saved. Please try again.",
+          brevo_success_doi: "Thanks! Please check your email and click the confirmation link to complete your subscription.",
+          newsletter_title: "✳ Newsletter ✳",
+          newsletter_line1: "Han Han Huhman Man",
+          newsletter_line2: "releases, demos, videos, occasional spam",
+          email_label: "Enter your email address to subscribe",
+          email_help: "For example: abc@xyz.com",
+          button_subscribe: "SUBSCRIBE"
+        },
+        de: {
+          brevo_error_save: "Deine Anmeldung konnte nicht gespeichert werden. Bitte versuche es erneut.",
+          brevo_success_doi: "Danke! Bitte schau in deine E-Mails und klicke den Bestätigungslink, um die Anmeldung abzuschließen.",
+          newsletter_title: "✳ Newsletter ✳",
+          newsletter_line1: "Han Han Huhman Man",
+          newsletter_line2: "Releases, Demos, Videos, gelegentlich Spam",
+          email_label: "E-Mail-Adresse eingeben",
+          email_help: "Zum Beispiel: abc@xyz.com",
+          button_subscribe: "ABONNIEREN"
+        }
+      };
+
+      const t = dict[lang] || dict.en;
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const k = el.getAttribute("data-i18n");
+        if (t[k]) el.textContent = t[k];
+      });
+
+      const loc = document.getElementById("sib-locale");
+      if (loc) loc.value = lang;
+
+      // Build DE/EN toggle links while preserving existing query params
+      function urlWithLang(newLang) {
+        const u = new URL(location.href);
+        u.searchParams.set("lang", newLang);
+        return u.toString();
       }
-    };
-    var AUTOHIDE = Boolean(0);
+      const aDe = document.getElementById("lang-de");
+      const aEn = document.getElementById("lang-en");
+      if (aDe && aEn) {
+        aDe.href = urlWithLang("de");
+        aEn.href = urlWithLang("en");
+        if (lang === "de") { aDe.setAttribute("aria-current","true"); aEn.removeAttribute("aria-current"); }
+        else { aEn.setAttribute("aria-current","true"); aDe.removeAttribute("aria-current"); }
+      }
+
+      // Some Brevo snippets expect a plain var
+      window.AUTOHIDE_VAR = Boolean(window.AUTOHIDE);
+    })();
+    var AUTOHIDE = (window.AUTOHIDE_VAR === true);
   </script>
+
+  <!-- Brevo scripts (include once) -->
   <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
-  <script src="https://www.google.com/recaptcha/api.js?render=6LdlnFwsAAAAABcOEWGjygLvsJZwaHKDAKmBAlqn&hl=en" async defer></script>
 </body>
 </html>
