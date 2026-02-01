@@ -7,102 +7,218 @@
 
   <!-- Brevo styles (include once) -->
   <style>
-    @font-face { font-display:block; font-family:Roboto;
-      src:url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/7529907e9eaf8ebb5220c5f9850e3811.woff2) format("woff2"),
-          url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/25c678feafdc175a70922a116c9be3e7.woff) format("woff");
+    @font-face {
+      font-display: block;
+      font-family: Roboto;
+      src:
+        url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/7529907e9eaf8ebb5220c5f9850e3811.woff2) format("woff2"),
+        url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/25c678feafdc175a70922a116c9be3e7.woff) format("woff");
     }
-    @font-face { font-display:fallback; font-family:Roboto; font-weight:600;
-      src:url(https://assets.brevo.com/font/Roboto/Latin/medium/normal/6e9caeeafb1f3491be3e32744bc30440.woff2) format("woff2"),
-          url(https://assets.brevo.com/font/Roboto/Latin/medium/normal/71501f0d8d5aa95960f6475d5487d4c2.woff) format("woff");
+    @font-face {
+      font-display: fallback;
+      font-family: Roboto;
+      font-weight: 600;
+      src:
+        url(https://assets.brevo.com/font/Roboto/Latin/medium/normal/6e9caeeafb1f3491be3e32744bc30440.woff2) format("woff2"),
+        url(https://assets.brevo.com/font/Roboto/Latin/medium/normal/71501f0d8d5aa95960f6475d5487d4c2.woff) format("woff");
     }
-    @font-face { font-display:fallback; font-family:Roboto; font-weight:700;
-      src:url(https://assets.brevo.com/font/Roboto/Latin/bold/normal/3ef7cf158f310cf752d5ad08cd0e7e60.woff2) format("woff2"),
-          url(https://assets.brevo.com/font/Roboto/Latin/bold/normal/ece3a1d82f18b60bcce0211725c476aa.woff) format("woff");
+    @font-face {
+      font-display: fallback;
+      font-family: Roboto;
+      font-weight: 700;
+      src:
+        url(https://assets.brevo.com/font/Roboto/Latin/bold/normal/3ef7cf158f310cf752d5ad08cd0e7e60.woff2) format("woff2"),
+        url(https://assets.brevo.com/font/Roboto/Latin/bold/normal/ece3a1d82f18b60bcce0211725c476aa.woff) format("woff");
     }
-    #sib-container input:-ms-input-placeholder { text-align:left; font-family:Helvetica, sans-serif; color:#c0ccda; }
-    #sib-container input::placeholder { text-align:left; font-family:Helvetica, sans-serif; color:#c0ccda; }
-    #sib-container textarea::placeholder { text-align:left; font-family:Helvetica, sans-serif; color:#c0ccda; }
-    #sib-container a { text-decoration:underline; color:#2BB2FC; }
+
+    #sib-container input:-ms-input-placeholder { text-align:left; font-family: Helvetica, sans-serif; color:#c0ccda; }
+    #sib-container input::placeholder { text-align:left; font-family: Helvetica, sans-serif; color:#c0ccda; }
+    #sib-container textarea::placeholder { text-align:left; font-family: Helvetica, sans-serif; color:#c0ccda; }
+    #sib-container a { text-decoration: underline; color:#2BB2FC; }
   </style>
   <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css" />
 
   <!-- Main styles -->
   <style>
     * { margin:0; padding:0; box-sizing:border-box; }
-    body { background:#FFC896; color:#000; font-family:"Arial Black", Arial, sans-serif; line-height:1.4; padding:20px; }
+    body {
+      background:#FFC896;
+      color:#000;
+      font-family:"Arial Black", Arial, sans-serif;
+      line-height:1.4;
+      padding:20px;
+    }
 
-    header{
-      max-width:1600px; margin:0 auto 40px; padding:30px 0;
+    header {
+      max-width:1600px;
+      margin:0 auto 40px;
+      padding:30px 0;
       border-bottom:8px solid #1E90FF;
-      display:grid; grid-template-columns:1fr 380px; gap:40px; align-items:center;
+      display:grid;
+      grid-template-columns:1fr 380px;
+      gap:40px;
+      align-items:center;
     }
-    .header-left{ text-align:center; }
-    h1{ font-size:clamp(2.5rem, 8vw, 6rem); letter-spacing:0.05em; margin-bottom:20px; color:#880033; }
-    h1 .break{ display:none; }
+    .header-left { text-align:center; }
 
-    .links{ display:flex; justify-content:center; gap:30px; flex-wrap:wrap; margin-top:30px; }
-    .links a{
-      color:#000; text-decoration:none; font-size:2rem; padding:10px 20px;
-      border:4px solid #1E90FF; background:#fff; transition:all 0.2s;
+    h1 {
+      font-size:clamp(2.5rem, 8vw, 6rem);
+      letter-spacing:0.05em;
+      margin-bottom:20px;
+      color:#880033;
     }
-    .links a:hover{ background:#880033; color:#fff; border-color:#880033; }
+    h1 .break { display:none; }
 
-    .header-newsletter{ width:380px; padding:0; }
-    .lang-toggle{ display:flex; gap:10px; justify-content:flex-end; margin-bottom:10px; }
-    .lang-toggle a{
-      display:inline-block; font-family:Arial, sans-serif; font-weight:700; letter-spacing:0.02em;
-      text-decoration:none; padding:6px 10px; border:3px solid #1E90FF; background:#fff; color:#000;
+    .links {
+      display:flex;
+      justify-content:center;
+      gap:30px;
+      flex-wrap:wrap;
+      margin-top:30px;
     }
-    .lang-toggle a[aria-current="true"]{ background:#880033; border-color:#880033; color:#fff; }
+    .links a {
+      color:#000;
+      text-decoration:none;
+      font-size:2rem;
+      padding:10px 20px;
+      border:4px solid #1E90FF;
+      background:#fff;
+      transition:all 0.2s;
+    }
+    .links a:hover {
+      background:#880033;
+      color:#fff;
+      border-color:#880033;
+    }
 
-    .header-newsletter #sib-container{ max-width:100% !important; font-size:15px; }
-    .header-newsletter .sib-form-block p{ font-size:24px !important; }
-    .header-newsletter .sib-text-form-block p{ font-size:14px !important; }
-    .header-newsletter label{ font-size:14px !important; }
-    .header-newsletter input{ font-size:15px !important; }
-    .header-newsletter button{ font-size:15px !important; padding:12px 24px !important; }
+    .header-newsletter { width:380px; padding:0; }
 
-    main{ max-width:1600px; margin:0 auto; }
+    .lang-toggle {
+      display:flex;
+      gap:10px;
+      justify-content:flex-end;
+      margin-bottom:10px;
+    }
+    .lang-toggle a {
+      display:inline-block;
+      font-family: Arial, sans-serif;
+      font-weight:700;
+      letter-spacing:0.02em;
+      text-decoration:none;
+      padding:6px 10px;
+      border:3px solid #1E90FF;
+      background:#fff;
+      color:#000;
+    }
+    .lang-toggle a[aria-current="true"] {
+      background:#880033;
+      border-color:#880033;
+      color:#fff;
+    }
 
-    .bandcamp-section{
+    .header-newsletter #sib-container { max-width:100% !important; font-size:15px; }
+    .header-newsletter .sib-form-block p { font-size:24px !important; }
+    .header-newsletter .sib-text-form-block p { font-size:14px !important; }
+    .header-newsletter label { font-size:14px !important; }
+    .header-newsletter input { font-size:15px !important; }
+    .header-newsletter button { font-size:15px !important; padding:12px 24px !important; }
+
+    /* Style Brevo confirmation/error panels to match site */
+    .header-newsletter .sib-form-message-panel {
+      max-width: 540px !important;
+      border: 6px solid #1E90FF !important;
+      background: #fff !important;
+      border-radius: 3px !important;
+      color: #000 !important;
+      font-family: "Arial Black", Arial, sans-serif !important;
+    }
+    .header-newsletter .sib-form-message-panel__text {
+      text-align: left !important;
+      font-size: 14px !important;
+      line-height: 1.3 !important;
+    }
+    .header-newsletter .sib-form-message-panel .sib-icon { display:none !important; }
+    .header-newsletter #success-message { color:#880033 !important; }
+
+    main { max-width:1600px; margin:0 auto; }
+
+    .bandcamp-section {
       margin:60px 0 40px;
-      display:grid; grid-template-columns:1fr auto; gap:30px; align-items:stretch;
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:30px;
+      align-items:stretch;
     }
-    .bandcamp-player{
-      border:8px solid #1E90FF; background:#fff; padding:20px;
-      display:flex; align-items:center; justify-content:center; min-height:0;
+    .bandcamp-player {
+      border:8px solid #1E90FF;
+      background:#fff;
+      padding:20px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:0;
     }
-    .bandcamp-player iframe{ width:100%; max-width:700px; height:240px; border:0; display:block; }
+    .bandcamp-player iframe {
+      width:100%;
+      max-width:700px;
+      height:240px;
+      border:0;
+      display:block;
+    }
 
-    .gif-wrapper{
-      border:8px solid #1E90FF; background:#000;
-      width:380px; aspect-ratio:4 / 3; overflow:hidden;
+    .gif-wrapper {
+      border:8px solid #1E90FF;
+      background:#000;
+      width:380px;
+      aspect-ratio:4 / 3;
+      overflow:hidden;
     }
-    .gif-wrapper a{ display:block; width:100%; height:100%; }
-    .gif-wrapper img{ width:100%; height:100%; object-fit:cover; display:block; }
+    .gif-wrapper a { display:block; width:100%; height:100%; }
+    .gif-wrapper img { width:100%; height:100%; object-fit:cover; display:block; }
 
-    .video-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(450px, 1fr)); gap:30px; margin:40px 0; }
-    .video-wrapper{ position:relative; padding-bottom:56.25%; height:0; border:6px solid #1E90FF; background:#000; }
-    .video-wrapper iframe{ position:absolute; top:0; left:0; width:100%; height:100%; border:0; }
-    .video-title{ margin-top:10px; font-size:1rem; font-weight:bold; text-align:center; }
+    .video-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(450px, 1fr));
+      gap:30px;
+      margin:40px 0;
+    }
+    .video-wrapper {
+      position:relative;
+      padding-bottom:56.25%;
+      height:0;
+      border:6px solid #1E90FF;
+      background:#000;
+    }
+    .video-wrapper iframe {
+      position:absolute;
+      top:0; left:0;
+      width:100%; height:100%;
+      border:0;
+    }
+    .video-title {
+      margin-top:10px;
+      font-size:1rem;
+      font-weight:bold;
+      text-align:center;
+    }
 
-    @media (max-width:1100px){
-      header{ grid-template-columns:1fr; text-align:center; }
-      .header-newsletter{ width:100%; max-width:420px; margin:30px auto 0; }
-      .lang-toggle{ justify-content:center; }
+    @media (max-width:1100px) {
+      header { grid-template-columns:1fr; text-align:center; }
+      .header-newsletter { width:100%; max-width:420px; margin:30px auto 0; }
+      .lang-toggle { justify-content:center; }
     }
-    @media (max-width:768px){
-      h1 .break{ display:block; }
-      .bandcamp-section{ grid-template-columns:1fr; }
-      .gif-wrapper{ width:100%; max-width:100%; }
-      .video-grid{ grid-template-columns:1fr; }
+    @media (max-width:768px) {
+      h1 .break { display:block; }
+      .bandcamp-section { grid-template-columns:1fr; }
+      .gif-wrapper { width:100%; max-width:100%; }
+      .video-grid { grid-template-columns:1fr; }
     }
-    @media (max-width:600px){
-      .links a{ font-size:1.5rem; padding:8px 16px; }
+    @media (max-width:600px) {
+      .links a { font-size:1.5rem; padding:8px 16px; }
     }
   </style>
 
-  <!-- Language + Brevo messages (must be defined before Brevo main.js runs) -->
+  <!-- Language + Brevo messages: must exist before Brevo main.js runs -->
   <script>
     (function () {
       const params = new URLSearchParams(location.search);
@@ -165,8 +281,7 @@
       <div class="sib-form" style="text-align:center; background-color:#ffc896;">
         <div id="sib-form-container" class="sib-form-container">
 
-          <div id="error-message" class="sib-form-message-panel"
-               style="font-size:16px; text-align:left; font-family:Helvetica, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949; max-width:540px;">
+          <div id="error-message" class="sib-form-message-panel">
             <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
               <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon" aria-hidden="true">
                 <path d="M256 40c118.621 0 216 96.075 216 216 0 119.291-96.61 216-216 216-119.244 0-216-96.562-216-216 0-119.203 96.602-216 216-216m0-32C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm-11.49 120h22.979c6.823 0 12.274 5.682 11.99 12.5l-7 168c-.268 6.428-5.556 11.5-11.99 11.5h-8.979c-6.433 0-11.722-5.073-11.99-11.5l-7-168c-.283-6.818 5.167-12.5 11.99-12.5zM256 340c-15.464 0-28 12.536-28 28s12.536 28 28 28 28-12.536 28-28-12.536-28-28-28z" />
@@ -177,8 +292,7 @@
             </div>
           </div>
 
-          <div id="success-message" class="sib-form-message-panel"
-               style="font-size:16px; text-align:left; font-family:Helvetica, sans-serif; color:#085229; background-color:#e7faf0; border-radius:3px; border-color:#13ce66; max-width:540px;">
+          <div id="success-message" class="sib-form-message-panel">
             <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
               <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon" aria-hidden="true">
                 <path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z" />
@@ -192,19 +306,17 @@
           <div id="sib-container" class="sib-container--large sib-container--vertical"
                style="text-align:center; background-color:rgba(255,255,255,1); max-width:540px; border-radius:3px; border-width:8px; border-color:#1e90ff; border-style:solid; direction:ltr">
             <form id="sib-form" method="POST"
-              action="https://55dd9dd9.sibforms.com/serve/MUIFAFb2I02bPdqZRtYdqJksTG45_A6jajdQGG7tFreQkAmdRRzue7hoQUqTgtv1UZVHYVNWyQLPety3dDQ8oAxpaA26x6KrWo0wQ9f8YoqTuQKPYTRvPhWflY-pGmbXOJciU7vAacYRa2kL0H-2dNfrzJ9ifR3iiANrseHc3vjJeyv0dnzAV4n-grWlAF2QwTSzBKUP4Do8IVswiw=="
-              data-type="subscription">
+                  action="https://55dd9dd9.sibforms.com/serve/MUIFAFb2I02bPdqZRtYdqJksTG45_A6jajdQGG7tFreQkAmdRRzue7hoQUqTgtv1UZVHYVNWyQLPety3dDQ8oAxpaA26x6KrWo0wQ9f8YoqTuQKPYTRvPhWflY-pGmbXOJciU7vAacYRa2kL0H-2dNfrzJ9ifR3iiANrseHc3vjJeyv0dnzAV4n-grWlAF2QwTSzBKUP4Do8IVswiw=="
+                  data-type="subscription">
 
               <div style="padding:8px 0;">
-                <div class="sib-form-block"
-                  style="font-size:32px; text-align:left; font-weight:700; font-family:Helvetica, sans-serif; color:#3C4858; background-color:transparent;">
+                <div class="sib-form-block" style="font-size:32px; text-align:left; font-weight:700; font-family:Helvetica, sans-serif; color:#3C4858; background-color:transparent;">
                   <p data-i18n="newsletter_title">✳ Newsletter ✳</p>
                 </div>
               </div>
 
               <div style="padding:8px 0;">
-                <div class="sib-form-block"
-                  style="font-size:16px; text-align:left; font-family:Helvetica, sans-serif; color:#3C4858; background-color:transparent;">
+                <div class="sib-form-block" style="font-size:16px; text-align:left; font-family:Helvetica, sans-serif; color:#3C4858; background-color:transparent;">
                   <div class="sib-text-form-block">
                     <p data-i18n="newsletter_line1">Han Han Huhman Man</p>
                     <p data-i18n="newsletter_line2">releases, demos, videos, occasional spam</p>
@@ -217,8 +329,8 @@
                   <div class="form__entry entry_block">
                     <div class="form__label-row">
                       <label class="entry__label"
-                        style="font-weight:700; text-align:left; font-size:16px; font-family:Helvetica, sans-serif; color:#3c4858;"
-                        for="EMAIL" data-required="*" data-i18n="email_label">
+                             style="font-weight:700; text-align:left; font-size:16px; font-family:Helvetica, sans-serif; color:#3c4858;"
+                             for="EMAIL" data-required="*" data-i18n="email_label">
                         Enter your email address to subscribe
                       </label>
 
@@ -229,11 +341,11 @@
                     </div>
 
                     <label class="entry__error entry__error--primary"
-                      style="font-size:16px; text-align:left; font-family:Helvetica, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;">
+                           style="font-size:16px; text-align:left; font-family:Helvetica, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;">
                     </label>
 
                     <label class="entry__specification"
-                      style="font-size:12px; text-align:left; font-family:Helvetica, sans-serif; color:#8390A4;">
+                           style="font-size:12px; text-align:left; font-family:Helvetica, sans-serif; color:#8390A4;">
                       <span data-i18n="email_help">For example: abc@xyz.com</span>
                     </label>
                   </div>
@@ -243,8 +355,8 @@
               <div style="padding:8px 0;">
                 <div class="sib-form-block" style="text-align:left">
                   <button class="sib-form-block__button sib-form-block__button-with-loader"
-                    style="font-size:16px; text-align:left; font-weight:700; font-family:Helvetica, sans-serif; color:#FFFFFF; background-color:#3E4857; border-radius:11px; border-width:0px;"
-                    form="sib-form" type="submit">
+                          style="font-size:16px; text-align:left; font-weight:700; font-family:Helvetica, sans-serif; color:#FFFFFF; background-color:#3E4857; border-radius:11px; border-width:0px;"
+                          form="sib-form" type="submit">
                     <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512" aria-hidden="true">
                       <path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z" />
                     </svg>
@@ -338,10 +450,9 @@
     </section>
   </main>
 
-  <!-- i18n + lang switch (runs before Brevo main.js because main.js is defer) -->
+  <!-- i18n + lang switch + re-apply when Brevo updates message panels -->
   <script>
     (function () {
-      const lang = window.__LANG || "en";
       const dict = {
         en: {
           brevo_error_save: "Your subscription could not be saved. Please try again.",
@@ -365,21 +476,31 @@
         }
       };
 
-      const t = dict[lang] || dict.en;
-      document.querySelectorAll("[data-i18n]").forEach(el => {
-        const k = el.getAttribute("data-i18n");
-        if (t[k]) el.textContent = t[k];
-      });
+      function getLang() {
+        return (window.__LANG === "de" || window.__LANG === "en") ? window.__LANG : "en";
+      }
 
-      const loc = document.getElementById("sib-locale");
-      if (loc) loc.value = lang;
+      function applyI18n() {
+        const lang = getLang();
+        const t = dict[lang] || dict.en;
 
-      // Build DE/EN toggle links while preserving existing query params
+        document.querySelectorAll("[data-i18n]").forEach(el => {
+          const k = el.getAttribute("data-i18n");
+          if (t[k]) el.textContent = t[k];
+        });
+
+        const loc = document.getElementById("sib-locale");
+        if (loc) loc.value = lang;
+      }
+
       function urlWithLang(newLang) {
         const u = new URL(location.href);
         u.searchParams.set("lang", newLang);
         return u.toString();
       }
+
+      // Toggle links + current state
+      const lang = getLang();
       const aDe = document.getElementById("lang-de");
       const aEn = document.getElementById("lang-en");
       if (aDe && aEn) {
@@ -389,9 +510,23 @@
         else { aEn.setAttribute("aria-current","true"); aDe.removeAttribute("aria-current"); }
       }
 
-      // Some Brevo snippets expect a plain var
+      // Initial apply
+      applyI18n();
+
+      // Re-apply when Brevo updates success/error message DOM
+      const targets = ["success-message", "error-message"]
+        .map(id => document.getElementById(id))
+        .filter(Boolean);
+
+      if (targets.length) {
+        const obs = new MutationObserver(() => applyI18n());
+        targets.forEach(node => obs.observe(node, { subtree:true, childList:true, characterData:true }));
+      }
+
       window.AUTOHIDE_VAR = Boolean(window.AUTOHIDE);
     })();
+
+    // Some Brevo snippets expect a plain var
     var AUTOHIDE = (window.AUTOHIDE_VAR === true);
   </script>
 
